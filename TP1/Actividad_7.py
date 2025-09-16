@@ -120,6 +120,4 @@ def menu() -> None:
                 print("Opción no válida. Intenta nuevamente.")
 
 
-# Ejecución principal
-if __name__ == "__main__":
-    menu()
+menu()
