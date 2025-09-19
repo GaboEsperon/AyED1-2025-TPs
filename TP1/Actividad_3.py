@@ -14,20 +14,34 @@ Más de 40                                   40% de descuento sobre tarifa máxi
 """
 
 
-def calcular_gastos(viajes, valor_pasaje):
+def calcular_gastos(viajes: int, valor_pasaje: float) -> float:
+    """
+    Calcula el total gastado en viajes considerando descuentos por cantidad de viajes.
+
+    Parámetros:
+        viajes (int): Cantidad de viajes realizados en el mes.
+        valor_pasaje (float): Valor de un boleto individual.
+
+    Retorna:
+        float: Total gastado, redondeado a dos decimales.
+    """
     if 1 <= viajes <= 20:
         total_gastado = valor_pasaje * viajes
     elif 21 <= viajes <= 30:
-        total_gastado = valor_pasaje * 0.8 * viajes
+        total_gastado = valor_pasaje * 0.8 * viajes  # 20% de descuento
     elif 31 <= viajes <= 40:
-        total_gastado = valor_pasaje * 0.7 * viajes
+        total_gastado = valor_pasaje * 0.7 * viajes  # 30% de descuento
     else:
-        total_gastado = valor_pasaje * 0.6 * viajes
+        total_gastado = valor_pasaje * 0.6 * viajes  # 40% de descuento
 
     return round(total_gastado, 2)
 
 
 def main():
+    """
+    Función principal que solicita al usuario la cantidad de viajes y el valor del pasaje,
+    calcula el gasto total aplicando descuentos según corresponda y muestra el resultado.
+    """
     while True:
         try:
             cantidad = int(input("Ingrese la cantidad de viajes realizados en el mes: "))
@@ -42,6 +56,7 @@ def main():
             break
         except ValueError:
             print("Por favor, ingrese un número válido.")
-    return None
 
-main()
+
+if __name__ == "__main__":
+    main()

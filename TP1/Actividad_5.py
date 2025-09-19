@@ -13,29 +13,57 @@ obtiene sumando 1+2+3+4.
 Ambas funciones lambda reciben como único parámetro el número a evaluar y de-
 vuelven True o False. No se permite utilizar ayudas externas a las mismas.
 """
-es_oblongo = lambda x: int((4 * x + 1) ** 0.5) ** 2 == 4 * x + 1
+def es_oblongo(numero: int) -> bool:
+    """
+    Determina si un número es oblongo (rectangular),
+    es decir, si se puede expresar como n*(n+1) para algún entero n.
 
-es_triangular = lambda x: any(n * (n + 1) // 2 == x for n in range(1, int((2 * x)**0.5) + 1))
+    Parámetros:
+        numero (int): Número a evaluar.
+
+    Retorna:
+        bool: True si el número es oblongo, False en caso contrario.
+    """
+    return int((4 * numero + 1) ** 0.5) ** 2 == 4 * numero + 1
+
+
+def es_triangular(numero: int) -> bool:
+    """
+    Determina si un número es triangular,
+    es decir, si se puede expresar como n*(n+1)//2 para algún entero n.
+
+    Parámetros:
+        numero (int): Número a evaluar.
+
+    Retorna:
+        bool: True si el número es triangular, False en caso contrario.
+    """
+    return any(n * (n + 1) // 2 == numero for n in range(1, int((2 * numero) ** 0.5) + 1))
+
 
 def main() -> None:
-    
+    """
+    Función principal que solicita un número al usuario, 
+    verifica si es oblongo y/o triangular, y muestra los resultados.
+    """
     while True:
-        
         try:
-        
-            num = int(input("ingrese un numero: "))
-        
+            num = int(input("Ingrese un número: "))
+            
             if es_oblongo(num):
-                print("el numero es oblongo")
+                print("El número es oblongo.")
             else:
-                print("el numero no es oblongo")
-        
+                print("El número no es oblongo.")
+            
             if es_triangular(num):
-                print("el numero es triangular")
+                print("El número es triangular.")
             else:
-                print("el numero no es triangular")        
+                print("El número no es triangular.")
+            
             break
         except ValueError:
-            print("por favor ingresar un valor entero: ")
+            print("Por favor, ingrese un valor entero.")
 
-main()
+
+if __name__ == "__main__":
+    main()
