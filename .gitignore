@@ -1,0 +1,4 @@
+# Ignorar documentos de Microsoft Word
+*.doc
+*.docx
+~$*.docx
