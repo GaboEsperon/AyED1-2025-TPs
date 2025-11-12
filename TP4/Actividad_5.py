@@ -43,7 +43,7 @@ def main():
     """
     Programa de prueba para verificar el comportamiento de las tres funciones.
     """
-    frase = "Depurar errores es el arte invisible detrás de todo buen programa"
+    frase = "Un mago nunca llega tarde, ni pronto; llega exactamente cuando se lo propone."
     n = 5
 
     print(f"Frase original: {frase}")
